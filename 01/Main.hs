@@ -13,10 +13,8 @@ sumOfWindows xs = sum (take 3 xs) : sumOfWindows (tail xs)
 
 main :: IO ()
 main = do
-        handle <- openFile "input" ReadMode
-        contents <- hGetContents handle
+        contents <- readFile "input"
         let lines = words contents
         let list = map read lines
         print (countIncreased list)
         print (countIncreased $ sumOfWindows list)
-        hClose handle
