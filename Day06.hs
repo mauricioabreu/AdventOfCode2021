@@ -30,7 +30,7 @@ gatherLanternfishes input = map read $ splitBy ',' input
 
 main :: IO ()
 main = do
-    contents <- readFile "input"
+    contents <- readFile "inputs/Day06"
     let input = gatherLanternfishes contents
     print (howManyLanternfish input 80)
     print (howManyLanternfish input 256)

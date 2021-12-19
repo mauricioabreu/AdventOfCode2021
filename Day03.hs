@@ -31,5 +31,5 @@ calcRates i = toDecimal mc * toDecimal lc
 
 main :: IO ()
 main = do
-    contents <- readFile "input"
+    contents <- readFile "inputs/Day03"
     print (calcRates (lines contents))

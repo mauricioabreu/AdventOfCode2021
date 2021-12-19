@@ -22,7 +22,7 @@ getCrabPositions input = map read $ splitBy ',' input
 
 main :: IO ()
 main = do
-    contents <- readFile "input"
+    contents <- readFile "inputs/Day07"
     let input = getCrabPositions contents
     print input
     print (howMuchFuel input)

@@ -26,6 +26,6 @@ parse s = case words s of
 
 main :: IO ()
 main = do
-        contents <- readFile "input"
+        contents <- readFile "inputs/Day02"
         print (runInstructions (map parse (lines contents)) 0 0)
         print (runInstructionsWithAim (map parse (lines contents)) 0 0 0)
