@@ -1,6 +1,7 @@
 {-# LANGUAGE TupleSections #-}
 
 import qualified Data.Map as Map
+import Text
 
 toMap :: (Ord k, Num a) => [k] -> Map.Map k a
 toMap xs = Map.fromListWith (+) (map (, 1) xs)
@@ -15,15 +16,6 @@ growUp lf = Map.fromListWith (+) $ do
     if l == 0
         then [(6, n), (8, n)]
         else [(l - 1, n)]
-
-splitBy :: Char -> String -> [String]
-splitBy del xs = splitBy' del xs []
-
-splitBy' :: Char -> String -> [Char] -> [String]
-splitBy' _ [] acc = [reverse acc]
-splitBy' del (x:xs) acc
-    | x == del = reverse acc : splitBy' del xs []
-    | otherwise = splitBy' del xs (x : acc)
 
 gatherLanternfishes :: String -> [Int]
 gatherLanternfishes input = map read $ splitBy ',' input
